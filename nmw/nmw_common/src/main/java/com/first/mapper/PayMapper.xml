@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.first.dao.PayMapper">
+
+    <insert id="addPay" >
+        insert into music_pay(out_trade_no,user_id,order_save) select #{out_trade_no},#{user_id},0
+    </insert>
+
+    <update id="successPay">
+        update music_pay  set total_amount=#{total_amount},timestamp= NOW()
+        ,expiration_time=DATE_ADD(timestamp,INTERVAL #{time} minute)
+        ,seller_id =#{seller_id},order_save=1
+        where out_trade_no=#{out_trade_no} and order_save=0
+    </update>
+
+
+    <update id="addPay2">
+        update music_pay a inner join
+        (select expiration_time,user_id from music_pay b
+        where  b.user_id =#{user_id} and b.order_save=1 and b.expiration_time>NOW())c
+        on a.user_id=c.user_id
+        set a.out_trade_no= #{out_trade_no}
+        ,a.timestamp=c.expiration_time
+        where  a.user_id = #{user_id} and a.order_save=1 and a.expiration_time>NOW()
+    </update>
+
+    <update id="successPay2">
+        update music_pay a inner join
+        (select expiration_time,total_amount,out_trade_no from music_pay b
+        where  b.user_id = #{user_id} and b.order_save=1 and b.expiration_time>NOW())c
+        on a.out_trade_no=c.out_trade_no
+        set a.expiration_time=DATE_ADD(c.expiration_time,INTERVAL #{time} minute)
+        ,a.total_amount=c.total_amount+ #{total_amount}
+        where  a.out_trade_no=#{out_trade_no}
+    </update>
+
+
+    <select id="getPayByUserId" resultType="Integer" parameterType="Integer" >
+        select COUNT(*) from music_pay where user_id =#{user_id} and expiration_time>NOW()
+    </select>
+
+
+    <select id="getAmountAll" resultType="Integer" >
+        select sum(total_amount) from music_pay where order_save=1
+    </select>
+
+    <select id="getPayAllByPage" resultType="Integer" parameterType="Integer">
+        select * from music_pay where order_save=#{order_save} limit #{page},#{limit}
+    </select>
+
+</mapper>

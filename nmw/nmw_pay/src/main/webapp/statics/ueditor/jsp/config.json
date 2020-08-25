@@ -1,0 +1,80 @@
+{
+
+    "imageActionName": "uploadimage",
+    "imageFieldName": "upfile",
+    "imageMaxSize": 2048000,
+    "imageAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"],
+    "imageCompressEnable": true,
+    "imageCompressBorder": 1600,
+    "imageInsertAlign": "none",
+    "imageUrlPrefix": "/others",
+    "imagePathFormat": "/statics/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}",
+
+    "scrawlActionName": "uploadscrawl",
+    "scrawlFieldName": "upfile",
+    "scrawlPathFormat": "/statics/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}",
+    "scrawlMaxSize": 2048000,
+    "scrawlUrlPrefix": "",
+    "scrawlInsertAlign": "none",
+
+
+    "snapscreenActionName": "uploadimage",
+    "snapscreenPathFormat": "/statics/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}",
+    "snapscreenUrlPrefix": "/others",
+    "snapscreenInsertAlign": "none",
+
+
+    "catcherLocalDomain": ["127.0.0.1", "localhost", "img.baidu.com"],
+    "catcherActionName": "catchimage",
+    "catcherFieldName": "source",
+    "catcherPathFormat": "/statics/ueditor/jsp/upload/image/{yyyy}{mm}{dd}/{time}{rand:6}",
+    "catcherUrlPrefix": "/others",
+    "catcherMaxSize": 2048000,
+    "catcherAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"],
+
+
+    "videoActionName": "uploadvideo",
+    "videoFieldName": "upfile",
+    "videoPathFormat": "/statics/ueditor/jsp/upload/video/{yyyy}{mm}{dd}/{time}{rand:6}",
+    "videoUrlPrefix": "/others",
+    "videoMaxSize": 102400000,
+    "videoAllowFiles": [
+        ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid"],
+
+
+    "fileActionName": "uploadfile",
+    "fileFieldName": "upfile",
+    "filePathFormat": "/statics/ueditor/jsp/upload/file/{yyyy}{mm}{dd}/{time}{rand:6}",
+    "fileUrlPrefix": "/others",
+    "fileMaxSize": 51200000,
+    "fileAllowFiles": [
+        ".png", ".jpg", ".jpeg", ".gif", ".bmp",
+        ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid",
+        ".rar", ".zip", ".tar", ".gz", ".7z", ".bz2", ".cab", ".iso",
+        ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".pdf", ".txt", ".md", ".xml"
+    ],
+
+
+    "imageManagerActionName": "listimage",
+    "imageManagerListPath": "/statics/ueditor/jsp/upload/image/",
+    "imageManagerListSize": 20,
+    "imageManagerUrlPrefix": "/others",
+    "imageManagerInsertAlign": "none",
+    "imageManagerAllowFiles": [".png", ".jpg", ".jpeg", ".gif", ".bmp"],
+
+
+    "fileManagerActionName": "listfile",
+    "fileManagerListPath": "/statics/ueditor/jsp/upload/file/",
+    "fileManagerUrlPrefix": "/others",
+    "fileManagerListSize": 20,
+    "fileManagerAllowFiles": [
+        ".png", ".jpg", ".jpeg", ".gif", ".bmp",
+        ".flv", ".swf", ".mkv", ".avi", ".rm", ".rmvb", ".mpeg", ".mpg",
+        ".ogg", ".ogv", ".mov", ".wmv", ".mp4", ".webm", ".mp3", ".wav", ".mid",
+        ".rar", ".zip", ".tar", ".gz", ".7z", ".bz2", ".cab", ".iso",
+        ".doc", ".docx", ".xls", ".xlsx", ".ppt", ".pptx", ".pdf", ".txt", ".md", ".xml"
+    ]
+
+}

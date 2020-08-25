@@ -1,0 +1,127 @@
+2020-08-25 10:23:22.963  INFO 18552 --- [main] a.b.d.c.e.WelcomeLogoApplicationListener : 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-08-25 10:23:22.984  INFO 18552 --- [main] e.OverrideDubboConfigApplicationListener : Dubbo Config was overridden by externalized configuration {dubbo.application.name=nmw-pay, dubbo.protocal.id=dubbo, dubbo.protocal.name=dubbo, dubbo.protocal.port=20880, dubbo.protocal.status=server, dubbo.provider.timeout=60000, dubbo.registry.address=192.168.220.128:2181,192.168.220.128:2182,192.168.220.128:2183, dubbo.registry.id=registery-1, dubbo.registry.protocol=zookeeper}
+2020-08-25 10:23:23.055  INFO 18552 --- [main] com.first.NmwPayApplication              : Starting NmwPayApplication on LAPTOP-DDD8CTEB with PID 18552 (D:\项目\项目四最最最中版\nmw - 副本\nmw_pay\target\classes started by yby in D:\项目\项目四最最最中版\nmw - 副本\nmw_pay)
+2020-08-25 10:23:23.056 DEBUG 18552 --- [main] com.first.NmwPayApplication              : Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 10:23:23.057  INFO 18552 --- [main] com.first.NmwPayApplication              : No active profile set, falling back to default profiles: default
+2020-08-25 10:23:23.583  INFO 18552 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ApplicationConfig#0, class : com.alibaba.dubbo.config.ApplicationConfig] has been registered.
+2020-08-25 10:23:23.584  INFO 18552 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] has been registered.
+2020-08-25 10:23:23.585  INFO 18552 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : registery-1, class : com.alibaba.dubbo.config.RegistryConfig] has been registered.
+2020-08-25 10:23:23.585  INFO 18552 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : registery-1] has been registered.
+2020-08-25 10:23:23.585  INFO 18552 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ProviderConfig#0, class : com.alibaba.dubbo.config.ProviderConfig] has been registered.
+2020-08-25 10:23:23.585  INFO 18552 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ProviderConfig#0] has been registered.
+2020-08-25 10:23:23.802  INFO 18552 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$5b43ef31] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:23:23.937  INFO 18552 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:23:23.940  INFO 18552 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:23:23.941  INFO 18552 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:23:24.205  INFO 18552 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8182 (http)
+2020-08-25 10:23:24.212  INFO 18552 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-25 10:23:24.212  INFO 18552 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-25 10:23:24.214  INFO 18552 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
+2020-08-25 10:23:24.214  INFO 18552 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-25 10:23:24.214  INFO 18552 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-25 10:23:24.217  INFO 18552 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2020-08-25 10:23:24.301  INFO 18552 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-25 10:23:24.301  INFO 18552 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1202 ms
+2020-08-25 10:23:24.969  INFO 18552 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 10:23:25.096  INFO 18552 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-08-25 10:23:25.193  INFO 18552 --- [main] .f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] have been binding by prefix of configuration properties : dubbo.application
+2020-08-25 10:23:25.199  INFO 18552 --- [main] .f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : registery-1] have been binding by prefix of configuration properties : dubbo.registry
+2020-08-25 10:23:25.211  INFO 18552 --- [main] .f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ProviderConfig#0] have been binding by prefix of configuration properties : dubbo.provider
+2020-08-25 10:23:25.476  INFO 18552 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8182 (http) with context path ''
+2020-08-25 10:23:25.489  INFO 18552 --- [main] com.first.NmwPayApplication              : Started NmwPayApplication in 2.836 seconds (JVM running for 3.545)
+2020-08-25 10:34:56.580  INFO 19920 --- [main] a.b.d.c.e.WelcomeLogoApplicationListener : 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-08-25 10:34:56.584  INFO 19920 --- [main] e.OverrideDubboConfigApplicationListener : Dubbo Config was overridden by externalized configuration {dubbo.application.name=nmw-pay, dubbo.protocal.id=dubbo, dubbo.protocal.name=dubbo, dubbo.protocal.port=20880, dubbo.protocal.status=server, dubbo.provider.timeout=60000, dubbo.registry.address=192.168.220.128:2181,192.168.220.128:2182,192.168.220.128:2183, dubbo.registry.id=registery-1, dubbo.registry.protocol=zookeeper}
+2020-08-25 10:34:56.668  INFO 19920 --- [main] com.first.NmwPayApplication              : Starting NmwPayApplication on LAPTOP-DDD8CTEB with PID 19920 (D:\项目\项目四最最最中版\nmw - 副本\nmw_pay\target\classes started by yby in D:\项目\项目四最最最中版\nmw - 副本\nmw_pay)
+2020-08-25 10:34:56.668 DEBUG 19920 --- [main] com.first.NmwPayApplication              : Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 10:34:56.668  INFO 19920 --- [main] com.first.NmwPayApplication              : No active profile set, falling back to default profiles: default
+2020-08-25 10:34:57.206  INFO 19920 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ApplicationConfig#0, class : com.alibaba.dubbo.config.ApplicationConfig] has been registered.
+2020-08-25 10:34:57.206  INFO 19920 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] has been registered.
+2020-08-25 10:34:57.206  INFO 19920 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : registery-1, class : com.alibaba.dubbo.config.RegistryConfig] has been registered.
+2020-08-25 10:34:57.206  INFO 19920 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : registery-1] has been registered.
+2020-08-25 10:34:57.206  INFO 19920 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ProviderConfig#0, class : com.alibaba.dubbo.config.ProviderConfig] has been registered.
+2020-08-25 10:34:57.206  INFO 19920 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ProviderConfig#0] has been registered.
+2020-08-25 10:34:57.419  INFO 19920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$ed1091e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:34:57.569  INFO 19920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:34:57.573  INFO 19920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:34:57.573  INFO 19920 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:34:57.836  INFO 19920 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8182 (http)
+2020-08-25 10:34:57.847  INFO 19920 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-25 10:34:57.847  INFO 19920 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-25 10:34:57.847  INFO 19920 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
+2020-08-25 10:34:57.847  INFO 19920 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-25 10:34:57.847  INFO 19920 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-25 10:34:57.851  INFO 19920 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2020-08-25 10:34:57.940  INFO 19920 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-25 10:34:57.940  INFO 19920 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1215 ms
+2020-08-25 10:34:58.526  INFO 19920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 10:34:58.606  INFO 19920 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-08-25 10:34:58.705  INFO 19920 --- [main] .f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] have been binding by prefix of configuration properties : dubbo.application
+2020-08-25 10:34:58.709  INFO 19920 --- [main] .f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : registery-1] have been binding by prefix of configuration properties : dubbo.registry
+2020-08-25 10:34:58.718  INFO 19920 --- [main] .f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ProviderConfig#0] have been binding by prefix of configuration properties : dubbo.provider
+2020-08-25 10:34:58.953  WARN 19920 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8182 is already in use
+2020-08-25 10:34:58.957  INFO 19920 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-08-25 10:34:58.957  INFO 19920 --- [main] f.a.ReferenceAnnotationBeanPostProcessor : class com.alibaba.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+2020-08-25 10:34:58.960  INFO 19920 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-08-25 10:34:58.975  INFO 19920 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-25 10:34:58.979 ERROR 19920 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8182 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8182 or configure this application to listen on another port.
+
+2020-08-25 10:41:54.031  INFO 10732 --- [main] a.b.d.c.e.WelcomeLogoApplicationListener : 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-08-25 10:41:54.038  INFO 10732 --- [main] e.OverrideDubboConfigApplicationListener : Dubbo Config was overridden by externalized configuration {dubbo.application.name=nmw-pay, dubbo.protocal.id=dubbo, dubbo.protocal.name=dubbo, dubbo.protocal.port=20880, dubbo.protocal.status=server, dubbo.provider.timeout=60000, dubbo.registry.address=192.168.220.128:2181,192.168.220.128:2182,192.168.220.128:2183, dubbo.registry.id=registery-1, dubbo.registry.protocol=zookeeper}
+2020-08-25 10:41:54.185  INFO 10732 --- [main] com.first.NmwPayApplication              : Starting NmwPayApplication on LAPTOP-DDD8CTEB with PID 10732 (D:\项目\项目四最最最中版\nmw - 副本\nmw_pay\target\classes started by yby in D:\项目\项目四最最最中版\nmw - 副本\nmw_pay)
+2020-08-25 10:41:54.186 DEBUG 10732 --- [main] com.first.NmwPayApplication              : Running with Spring Boot v2.3.2.RELEASE, Spring v5.2.8.RELEASE
+2020-08-25 10:41:54.186  INFO 10732 --- [main] com.first.NmwPayApplication              : No active profile set, falling back to default profiles: default
+2020-08-25 10:41:54.953  INFO 10732 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ApplicationConfig#0, class : com.alibaba.dubbo.config.ApplicationConfig] has been registered.
+2020-08-25 10:41:54.954  INFO 10732 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] has been registered.
+2020-08-25 10:41:54.955  INFO 10732 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : registery-1, class : com.alibaba.dubbo.config.RegistryConfig] has been registered.
+2020-08-25 10:41:54.955  INFO 10732 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : registery-1] has been registered.
+2020-08-25 10:41:54.955  INFO 10732 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ProviderConfig#0, class : com.alibaba.dubbo.config.ProviderConfig] has been registered.
+2020-08-25 10:41:54.955  INFO 10732 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ProviderConfig#0] has been registered.
+2020-08-25 10:41:55.261  INFO 10732 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$ed1091e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:41:55.446  INFO 10732 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:41:55.449  INFO 10732 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:41:55.451  INFO 10732 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-25 10:41:55.766  INFO 10732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8182 (http)
+2020-08-25 10:41:55.776  INFO 10732 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-25 10:41:55.777  INFO 10732 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-25 10:41:55.779  INFO 10732 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.24] using APR version [1.7.0].
+2020-08-25 10:41:55.779  INFO 10732 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-08-25 10:41:55.780  INFO 10732 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-08-25 10:41:55.783  INFO 10732 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2020-08-25 10:41:55.872  INFO 10732 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-25 10:41:55.873  INFO 10732 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1614 ms
+2020-08-25 10:41:56.609  INFO 10732 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-08-25 10:41:56.729  INFO 10732 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: ServletContext resource [/index.html]
+2020-08-25 10:41:56.869  INFO 10732 --- [main] .f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] have been binding by prefix of configuration properties : dubbo.application
+2020-08-25 10:41:56.875  INFO 10732 --- [main] .f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : registery-1] have been binding by prefix of configuration properties : dubbo.registry
+2020-08-25 10:41:56.889  INFO 10732 --- [main] .f.a.DubboConfigBindingBeanPostProcessor : The properties of bean [name : com.alibaba.dubbo.config.ProviderConfig#0] have been binding by prefix of configuration properties : dubbo.provider
+2020-08-25 10:41:57.106  INFO 10732 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8182 (http) with context path ''
+2020-08-25 10:41:57.120  INFO 10732 --- [main] com.first.NmwPayApplication              : Started NmwPayApplication in 3.724 seconds (JVM running for 4.73)

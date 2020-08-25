@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.first.dao.ListMapper">
+    <select resultType="Sheet" id="getSheetByName">
+    select sheet_name ,creationDate from music_sheet where id in (select sheet_id from music_collect where user_id = (select id from music_user where userName = #{userName}))
+    </select>
+
+    <select id="getSongsByName" resultType="Songs">
+select * from music_songs where music_songs.id in (select song_id from music_list where list_id = (SELECT list_id from music_sheet where sheet_name = #{sheetName})) </select>
+
+    <select resultType="Sheet" id="getSheetList">
+   select sheet_name ,creationDate,sheet_pic  from music_sheet where sheet_name = #{sheetName}
+</select>
+
+
+    <select resultType="String" id="getSong">
+SELECT * from music_songs where song_name = #{songName} </select>
+    <select id = "getListId" resultType="sheet">
+        SELECT id FROM music_list WHERE (list_id = (SELECT list_id  from music_sheet where user_id=(SELECT id from music_user where userName = #{userName}))) AND ((song_id = (select id from music_songs where song_name = #{songName})))
+    </select>
+    <insert id = "insertSong">
+        INSERT INTO music_list (list_id,song_id) VALUES ((SELECT list_id  from music_sheet where user_id = (SELECT id from music_user where userName = #{userName})),(select id from music_songs where song_name = #{songName}))
+    </insert>
+    <select id="getSongByName" resultType="Songs">
+        select song_name,song_singer,song_url from music_songs where 1=1
+        <if test="songName!=null and songName!=''">
+            and song_name like CONCAT("%",#{songName},"%")
+        </if>
+
+    </select>
+
+    <insert id="addSongListByAdmin">
+        insert into music_list(id,list_id,song_id)
+        <if test="list_id==null and  song_id ==null">
+            select null,id,null from music_user ORDER BY id desc LIMIT 0,1
+        </if>
+        <if test="list_id!=null and  song_id!=null">
+            values (null,#{list_id},#{song_id})
+        </if>
+    </insert>
+
+    <delete id="delSongListByuserId" parameterType="Integer">
+        delete from music_list  where list_id= #{list_id}
+    </delete>
+
+    <update id="modifySongListBysongId" >
+        update music_list set song_id = null where song_id= #{song_id}
+    </update>
+
+    <insert id="addSongListBylistId">
+        insert into music_list(list_id) select   FLOOR( 10000 + RAND() * 1000000000)
+    </insert>
+
+    <delete id="delSongListBysheetId" parameterType="Integer">
+        delete from music_list where list_id in (select list_id from music_sheet where id= #{id} )
+    </delete>
+
+    <insert id="addSongListById">
+        insert into music_list (list_id,song_id)
+        select list_id,#{song_id} from music_sheet where id=#{list_id}
+    </insert>
+
+    <update id="delSongListById">
+        update  music_list set song_id=null
+        where  song_id= #{song_id} and
+        list_id= (select list_id from music_sheet where id=#{list_id})
+    </update>
+    <!--lxl-->
+
+
+
+</mapper>

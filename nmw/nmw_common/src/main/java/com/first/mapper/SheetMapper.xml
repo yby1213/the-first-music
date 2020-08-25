@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.first.dao.SheetMapper">
+    <select id="getAllSheet"  resultType="Sheet">
+    select * from music_sheet where user_id=1
+</select>
+
+    <select id="getPartSheet"  resultType="Sheet">
+    select * from music_sheet where user_id=1 limit 0,9
+</select>
+    <select id="pageSheet"  resultType="Sheet">
+    select * from music_sheet LIMIT #{currentPageNo},#{pageSize}
+</select>
+
+    <select id="sheetCount" resultType="int">
+    select count(1) as count from music_sheet
+</select>
+
+
+    <select id="getSheetListByAdmin" resultType="Sheet">
+        select * from music_sheet where user_id=1
+        <if test="keyword!='%null%' ">
+            and  sheet_name like #{keyword}
+        </if>
+        order by id desc limit  #{page}, #{limit}
+    </select>
+
+    <insert id="addSheetByAdmin">
+        insert into music_sheet(id,sheet_name,sheet_pic,creationDate,sheet_collect,user_id,list_id)
+        select null,a.userName,a.userPic,NOW(),(@i:= @i+1) as sheet_collect,a.id,b.list_id
+        from music_user a ,music_list b, (SELECT @i:=0) as i
+        ORDER BY sheet_collect desc LIMIT 0,1
+    </insert>
+
+    <delete id="delSheetByuserId" parameterType="Integer">
+         delete from music_sheet  where user_id= #{user_id}
+    </delete>
+
+    <insert id="addSheetByAdmin2">
+        insert into music_sheet(sheet_name,sheet_pic,creationDate,sheet_collect,user_id,list_id)
+        select #{sheet_name},#{sheet_pic},NOW(),0,1,list_id from music_list ORDER BY id desc LIMIT 0,1
+    </insert>
+
+    <delete id="delSheetBysheetId" parameterType="Integer">
+        delete from music_sheet where id= #{id};
+    </delete>
+
+    <select id="getSheetByName" resultType="String">
+        select id from music_collect where user_id = (SELECT id from music_user where userName=#{userName}) AND sheet_id = (SELECT id from music_sheet where sheet_name = #{sheetName})
+    </select>
+    <insert id = "addSheetLike">
+        INSERT into music_collect(user_id,sheet_id) VALUES((SELECT id from music_user where userName=#{userName}),(SELECT id from music_sheet where sheet_name = #{sheetName}))
+    </insert>
+
+</mapper>

@@ -1,0 +1,46 @@
+2020-08-14 13:39:54.254  INFO 23340 --- [main] a.b.d.c.e.WelcomeLogoApplicationListener : 
+
+ :: Dubbo Spring Boot (v0.2.0) : https://github.com/apache/incubator-dubbo-spring-boot-project
+ :: Dubbo (v2.6.2) : https://github.com/apache/incubator-dubbo
+ :: Google group : dev@dubbo.incubator.apache.org
+
+2020-08-14 13:39:54.264  INFO 23340 --- [main] e.OverrideDubboConfigApplicationListener : Dubbo Config was overridden by externalized configuration {dubbo.application.name=nmw-consume, dubbo.registry.address=192.168.168.128:2181,192.168.168.128:2182,192.168.168.128:2183, dubbo.registry.id=registery-1, dubbo.registry.protocol=zookeeper}
+2020-08-14 13:39:54.423  INFO 23340 --- [main] com.first.NmwConsumerApplication         : Starting NmwConsumerApplication on TJJ with PID 23340 (D:\one\nmw\nmw_consumer\target\classes started by tjj in D:\one\nmw)
+2020-08-14 13:39:54.425  INFO 23340 --- [main] com.first.NmwConsumerApplication         : No active profile set, falling back to default profiles: default
+2020-08-14 13:39:55.523  INFO 23340 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : com.alibaba.dubbo.config.ApplicationConfig#0, class : com.alibaba.dubbo.config.ApplicationConfig] has been registered.
+2020-08-14 13:39:55.524  INFO 23340 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : com.alibaba.dubbo.config.ApplicationConfig#0] has been registered.
+2020-08-14 13:39:55.524  INFO 23340 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The dubbo config bean definition [name : registery-1, class : com.alibaba.dubbo.config.RegistryConfig] has been registered.
+2020-08-14 13:39:55.524  INFO 23340 --- [main] .a.d.c.s.c.a.DubboConfigBindingRegistrar : The BeanPostProcessor bean definition [com.alibaba.dubbo.config.spring.beans.factory.annotation.DubboConfigBindingBeanPostProcessor] for dubbo config bean [name : registery-1] has been registered.
+2020-08-14 13:39:55.709  INFO 23340 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration' of type [com.alibaba.boot.dubbo.autoconfigure.DubboAutoConfiguration$$EnhancerBySpringCGLIB$$254d6c75] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-14 13:39:55.841  INFO 23340 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-14 13:39:55.843  INFO 23340 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'relaxedDubboConfigBinder' of type [com.alibaba.boot.dubbo.autoconfigure.RelaxedDubboConfigBinder] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-08-14 13:39:56.243  INFO 23340 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8181 (http)
+2020-08-14 13:39:56.256  INFO 23340 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-08-14 13:39:56.257  INFO 23340 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-08-14 13:39:56.712  INFO 23340 --- [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2020-08-14 13:39:56.719  INFO 23340 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-08-14 13:39:56.720  INFO 23340 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2146 ms
+2020-08-14 13:39:56.902  WARN 23340 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderController': Unsatisfied dependency expressed through field 'payService'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.first.service.PayService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2020-08-14 13:39:56.904  INFO 23340 --- [main] f.a.ReferenceAnnotationBeanPostProcessor : class com.alibaba.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor was destroying!
+2020-08-14 13:39:56.910  INFO 23340 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-08-14 13:39:56.936  INFO 23340 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-08-14 13:39:57.252 ERROR 23340 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field payService in com.first.controller.OrderController required a bean of type 'com.first.service.PayService' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.first.service.PayService' in your configuration.
+

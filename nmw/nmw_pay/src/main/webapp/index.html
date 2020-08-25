@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<link rel="stylesheet" href="../../../statics/layuiadmin/layui/css/layui.css" media="all">
+<link rel="stylesheet" href="../../../statics/layuiadmin/style/admin.css" media="all">
+<style>
+    .boxframe {width: 149.5px;height: 136px;margin: 25px 8px 0 13px;border: solid 1px #e6e6e6;display: inline-block;}
+    img {width: 100%;height: 100%;}
+    .lanrentuku img {border: 1px solid #e6e6e6;display: inline-block;}
+</style>
+<script>
+    function myFun(sId) {
+        var oImg = document.getElementsByTagName('img');
+        for(var i = 0; i < oImg.length; i++) {
+            if(oImg[i].id == sId) {
+                oImg[i].previousSibling.previousSibling.checked = true;
+                oImg[i].style.border = '2px solid #fa5c5a';
+            } else {
+                oImg[i].style.border = '0px';
+            }
+        }
+    }
+</script>
+
+<body>
+
+<div style="height: 450px;width: 711px; border: solid 1px #e6e6e6; margin: auto; margin-top: 50px;">
+    <div style="  height: 38.7px;width: 100%; background-color: #333333; margin: auto; vertical-align: middle;">
+        <span style="color: white; size: 30px;line-height: 38.7px; margin-left: 20px; vertical-align: auto;">开通会员</span>
+        <span style="color: white; size: 25px;line-height: 38.7px; margin-left: 592px; vertical-align: auto;"><i class="layui-icon layui-icon-close" style="font-size: 30px;font-weight: 400; color:white;"></i></span>
+    </div>
+    <div style="height: 54.6px;width: 100%;"><img src="../../../statics/imgs/pay2.png"></div>
+    <!--表单-->
+    <form id="form" action="order/alipay" method="post">
+
+        <div class="lanrentuku" style="height: 241.3px;width: 100%;">
+            <div class="boxframe" style="margin:25px 8px 0 18px; ">
+                <input type="radio" id="111" class="quantity" name="quantity" value="8"  checked style="display:none">
+                <img id="aa" src="../../../statics/imgs/payframe1.png" onclick="myFun(this.id)">
+            </div>
+            <div class="boxframe ">
+                <input type="radio" id="222"  class="quantity" name="quantity" value="88"  style="display:none">
+                <img id="bb" src="../../../statics/imgs/payframe2.png" onclick="myFun(this.id)">
+            </div>
+            <div class="boxframe ">
+                <input type="radio" id="333" class="quantity" name="quantity" value="45" style="display:none">
+                <img id="cc" src="../../../statics/imgs/payframe3.png" onclick="myFun(this.id)">
+            </div>
+            <div class="boxframe ">
+                <input type="radio"  id="444" class="quantity" name="quantity" value="8" style="display:none">
+                <img id="dd" src="../../../statics/imgs/payframe4.png" onclick="myFun(this.id)">
+            </div>
+
+            <input type="text" name="outTradeNo"id="outTradeNo" value="" hidden="hidden"><br>  
+            <input type="text" name="subject" value="第一音乐会员" hidden="hidden"><br>
+            <input type="text" name="body" value="商铺详情" hidden="hidden"><br>  
+            <!--<input type="text" name="buyerId" id="buyerId" value="100000" hidden="hidden"><br> --> 
+             
+            <div class="layui-form-item">
+                <label class="layui-form-label">金额 :</label>
+                <div class="layui-input-inline">
+                    <input type="text"  readonly="readonly"  name="totalAmount" id="totalAmout" value="" required lay-verify="required" class="layui-input">
+                </div>
+            </div>
+            <input type="button" id="botton1" style="margin-left: 60px;" class="botton1 layui-btn layui-btn-normal" value="支付宝支付" onclick="submitForm('alipay')">    
+            <input type="button"id="botton2"  class="layui-btn" value=" 微信支付">
+        </div>
+    </form>
+    <!--结束-->
+</div>
+</div>
+
+</body>
+<script src="../../../statics/layuiadmin/layui/layui.js"></script>
+<script src="../../../statics/js/jquery-3.5.1.js"></script>
+<script>
+
+    $(document).ready(function() {
+        //x上限，y下限
+        var x = 999999999;
+        var y = 100000000;
+        var rand = parseInt(Math.random() * (x - y + 1) + y);
+        $("#outTradeNo").val(rand);
+    })
+    function run() {
+        var quantity = $("input[name='quantity']:checked").val();
+        $("#totalAmout").val(quantity);
+    }
+    window.setInterval(run, 100);
+</script>
+
+<script language="javascript">
+    function submitForm(action) {
+        document.getElementById("form").action = action;
+        document.getElementById("form").submit();
+    }
+</script>
+<script language="javascript">
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        var q = window.location.pathname.substr(1).match(reg_rewrite);
+        if(r != null){
+            return unescape(r[2]);
+        }else if(q != null){
+            return unescape(q[2]);
+        }else{
+            return null;
+        }
+    }
+    var user_id=getQueryString('user_id');
+    localStorage.setItem("user_id",user_id);
+    </script>
+<script>
+    var layui=layui.layui;
+    var url1="";
+    //1.查询用户未过期订单
+    setTimeout(function(){
+        $.ajax({
+            type:"get",
+            url:"http://localhost:8182/getUserOrder?user_id="+localStorage.getItem("user_id"),
+            success: function(res){
+                console.log(res);
+                //console.log(obj.field);
+                if(res.status==1){
+                    alert("是vip");
+                    url1="http://localhost:8182/addpay?index=2&user_id="
+                }else{
+                    alert("目前不是vip");
+                    url1="http://localhost:8182/addpay?index=1&user_id="
+
+                }
+            }
+        });
+    },1000);
+
+
+    //2.创建订单
+    $("#botton1").click(function(){
+            alert("正在创建订单....");
+            $.ajax({
+                type:"get",
+                url: url1+localStorage.getItem("user_id")+"&out_Trade_No="+$("#outTradeNo").val(),
+                success: function(res){
+                    console.log(res);
+                    console.log(obj.field);
+                    if(res.status=1){
+                        layer.msg("成功");
+                    }else{
+                        layer.msg("失败了");
+                    }
+                }
+            });
+    });
+</script>
+
+</html>

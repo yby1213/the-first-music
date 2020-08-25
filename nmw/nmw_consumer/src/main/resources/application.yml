@@ -1,0 +1,24 @@
+
+server:
+  port: 8181
+logging:
+  level:
+    com.first: debug
+  file:
+    path: ./logs/music.log
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  servlet:
+    multipart:
+      max-file-size: 20000000
+      max-request-size: 100000000
+dubbo:
+  application:
+    name: nmw-consume
+  registry:
+    protocol: zookeeper
+    address: 192.168.245.128:2181,192.168.245.128:2182,192.168.245.128:2183
+    id: registery-1

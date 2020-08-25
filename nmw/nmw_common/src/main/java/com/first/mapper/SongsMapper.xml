@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.first.dao.SongsMapper">
+    <select id="getAllSongs"  resultType="Songs">
+    select * from music_songs limit 0,15
+</select>
+
+    <select id="getAllSongs2"  resultType="Songs">
+    select * from music_songs limit 16,15
+</select>
+
+
+    <select id="orderSongs"  resultType="Songs">
+    select * from music_songs order by creationDate DESC limit 0,5
+</select>
+
+    <select id="pageSongs"  resultType="Songs">
+    select * from music_songs LIMIT #{currentPageNo},#{pageSize}
+</select>
+
+    <select id="getPartSongs"  resultType="Songs">
+    select * from music_songs limit 0,5
+</select>
+<select id="songsCount" resultType="int">
+    select count(1) as count from music_songs
+</select>
+
+    <select id="getPartSongs2"  resultType="Songs">
+    select * from music_songs LIMIT 5,5
+</select>
+
+    <select id="getSongsCount" resultType="Integer">
+        select COUNT(*) from music_songs
+    </select>
+
+    <select id="getSongsAllByPage" resultType="Songs">
+        select * from music_songs
+        <if test="keyword!='%null%'">
+            where song_singer like #{keyword} or song_name like #{keyword}
+        </if>
+        order by id desc limit  #{page}, #{limit}
+    </select>
+
+    <select id="getSongsOne" resultType="Songs" parameterType="Integer">
+        select * from music_songs where id= #{id} limit 0,1
+    </select>
+
+    <insert id="addSongs"  >
+       insert into music_songs(song_singer,song_name,song_role,song_url,song_pic,creationDate,song_collect)
+        select #{song_singer},#{song_name},#{song_role},#{song_url},#{song_pic},NOW(),0 from DUAL
+        where not EXISTS (select song_singer,song_name from music_songs WHERE song_singer= #{song_singer} and song_name= #{song_name})
+    </insert>
+
+    <delete id="delSongListBysongId" parameterType="Integer">
+        delete from music_songs where id= #{id}
+    </delete>
+
+    <delete id="delCommentBysongsId" parameterType="Integer">
+        delete from music_comment  where id= #{songs_id}
+    </delete>
+
+    <insert id="modifySong">
+        update music_songs set
+        song_collect= #{song_collect},song_name= #{song_name},song_role= #{song_role},song_singer= #{song_singer}
+        where id= #{id}
+    </insert>
+
+    <select id="getSongById" parameterType="Integer" resultType="Songs">
+        select * from music_songs where id in
+        (select song_id from music_list where list_id=
+        (select list_id from music_sheet where id =#{id}) )
+    </select>
+
+
+    <select id="getSongLike" resultType="Songs">
+    SELECT * from music_songs where id in (SELECT song_id from music_list where list_id =  (SELECT list_id from music_sheet where user_id = (SELECT id from music_user where userName = #{userName})))
+</select>
+    <select id="start">
+    SET foreign_key_checks = #{number}
+</select>
+    <delete id="delSongLike">
+    DELETE from music_list WHERE (list_id = (SELECT list_id  from music_sheet where user_id=(SELECT id from music_user where userName = #{userName}))) AND ((song_id = (select id from music_songs where song_name = #{songName})))
+</delete>
+
+
+
+</mapper>

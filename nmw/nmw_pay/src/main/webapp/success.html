@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>支付成功了鸭!!!</h1>
+<div style="margin: auto">
+    <img src="statics/imgs/success.jpg" width="250px">
+</div>
+</body>
+
+<script src="statics/js/jquery-3.5.1.js"></script>
+<script language="javascript">
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var reg_rewrite = new RegExp("(^|/)" + name + "/([^/]*)(/|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        var q = window.location.pathname.substr(1).match(reg_rewrite);
+        if(r != null){
+            return unescape(r[2]);
+        }else if(q != null){
+            return unescape(q[2]);
+        }else{
+            return null;
+        }
+    }
+    var total_amount=getQueryString('total_amount');
+    var out_trade_no=getQueryString('out_trade_no');
+    var seller_id=getQueryString('seller_id');
+    var timestamp=getQueryString('timestamp');
+    console.log(total_amount);
+    console.log(out_trade_no);
+    console.log(seller_id);
+    console.log(timestamp);
+
+    $.ajax({
+        type:"get",
+        url:"http://localhost:8182/successpay?total_amount="+total_amount
+            +"&out_trade_no="+out_trade_no
+            +"&seller_id="+seller_id
+            +"&timestamp="+timestamp
+            +"&user_id="+localStorage.getItem("user_id"),
+        success: function(res){
+            console.log(res);
+            if(res.status==1){
+                alert("恭喜你成为网站的会员了");
+            }else{
+                alert("恭喜你成为网站的会员了");
+            }
+        }
+    });
+    setTimeout(function(){
+        window.location.href="index.html?user_id="+localStorage.getItem("user_id");
+    },2000);
+</script>
+</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/nmw.iml" filepath="$PROJECT_DIR$/.idea/nmw.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nmw_common/nmw_common.iml" filepath="$PROJECT_DIR$/nmw_common/nmw_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nmw_consumer/nmw_consumer.iml" filepath="$PROJECT_DIR$/nmw_consumer/nmw_consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/nmw_provider/nmw_provider.iml" filepath="$PROJECT_DIR$/nmw_provider/nmw_provider.iml" />
+    </modules>
+  </component>
+</project>

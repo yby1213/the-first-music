@@ -1,0 +1,32 @@
+
+server:
+  port: 8081
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/music?serverTimezone=UTC
+    username: root
+    password: 123456
+mybatis:
+  mapper-locations: classpath:com/first/mapper/*.xml
+  type-aliases-package: com.first.entity
+logging:
+  level:
+    com.first: debug
+  file:
+    path: ./logs/music.log
+
+dubbo:
+  provider:
+    timeout: 60000
+  application:
+    name: nmw-provider
+  registry:
+    protocol: zookeeper
+    address: 192.168.245.128:2181,192.168.245.128:2182,192.168.245.128:2183
+    id: registery-1
+  protocal:
+    port: 20880
+    name: dubbo
+    id: dubbo
+    status: server

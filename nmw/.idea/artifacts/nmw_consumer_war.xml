@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="nmw_consumer:war">
+    <output-path>$PROJECT_DIR$/nmw_consumer/target</output-path>
+    <root id="archive" name="nmw_consumer-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="nmw_consumer:war exploded" />
+    </root>
+  </artifact>
+</component>
